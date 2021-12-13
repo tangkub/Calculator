@@ -17,8 +17,6 @@ class Calculator(tk.Tk):
         self.HEIGHT1 = 3
         self.FONT1 = ("Helvetica", 16)
         self.FONT2 = ("Helvetica", 20)
-        # cnt for tracking position of input text
-        self.cnt = 0
 
         # GUI
         # window
@@ -92,14 +90,14 @@ class Calculator(tk.Tk):
     # function
     # get number and insert to display
     def GetVar(self, num):
-        self.ent_display.insert(self.cnt, num)
-        self.cnt+=1
+        length = len(self.ent_display.get())
+        self.ent_display.insert(length, num)
 
     # get operator and insert to display
     def GetOpt(self, opt):
         opt_len = len(opt)
-        self.ent_display.insert(self.cnt, opt)
-        self.cnt+=opt_len
+        length = len(self.ent_display.get())
+        self.ent_display.insert(length, opt)
 
     # remove all characters on display
     def ClearAll(self):
@@ -112,7 +110,6 @@ class Calculator(tk.Tk):
         length = len(result)
         self.ClearAll()
         self.ent_display.insert(0, result)
-        self.cnt+=length
 
     # flip numerator and denominator
     def Flip(self):
@@ -122,7 +119,6 @@ class Calculator(tk.Tk):
             length = len(result)
             self.ClearAll()
             self.ent_display.insert(0, result)
-            self.cnt+=length
 
     # remove last character
     def Undo(self):
