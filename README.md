@@ -1,4 +1,4 @@
-# Calculator project
+# Calculator Project
 
 ## Description
 This project is developed for learning and practicing Python.\
@@ -16,7 +16,7 @@ Run as below with your cmd on project directory.
 python main.py
 ```
 
-## Key Learning points
+## Key Learning
 - Build GUI calculator as a class (OOP)
 - Class attribrute and method
 - Function to calculate as calculator
